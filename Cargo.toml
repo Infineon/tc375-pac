@@ -14,12 +14,12 @@
 # 			*
 # 			******************************************************************************
 [package]
-name = "tc37xpd"
+name = "tc375-pac"
 version = "0.0.1"
 authors = ["Infineon developers"]
 edition = "2021"
 rust-version = "1.64"
-description = "Description tests"
+description = "PAC for Aurix TC375"
 keywords = ["no_std", "infineon", "aurix"]
 categories = ["embedded","hardware-support","no-std","no-std::no-alloc"]
 license-file = "LICENSE.txt"
