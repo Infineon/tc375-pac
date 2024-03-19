@@ -1,0 +1,122 @@
+# *****************************************************************************
+# 			*
+# 			* Copyright (C) 2024 Infineon Technologies AG. All rights reserved.
+# 			*
+# 			* Infineon Technologies AG (Infineon) is supplying this software for use with
+# 			* Infineon's microcontrollers. This file can be freely distributed within
+# 			* development tools that are supporting such microcontrollers.
+# 			*
+# 			* THIS SOFTWARE IS PROVIDED "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED
+# 			* OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+# 			* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+# 			* INFINEON SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL,
+# 			* OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
+# 			*
+# 			******************************************************************************
+[package]
+name = "tc37xpd"
+version = "0.0.1"
+authors = ["Infineon developers"]
+edition = "2021"
+rust-version = "1.64"
+description = "Description tests"
+keywords = ["no_std", "infineon", "aurix"]
+categories = ["embedded","hardware-support","no-std","no-std::no-alloc"]
+license-file = "LICENSE.txt"
+
+[lib]
+test = false
+bench = false
+
+
+
+
+
+[features]
+adma0 = []
+amu00 = []
+amu01 = []
+asclin0 = []
+asclin1 = []
+asclin10 = []
+asclin11 = []
+asclin2 = []
+asclin3 = []
+asclin4 = []
+asclin5 = []
+asclin6 = []
+asclin7 = []
+asclin8 = []
+asclin9 = []
+can0 = []
+can1 = []
+cbs = []
+ccu60 = []
+ccu61 = []
+convctrl = []
+cpu0 = []
+cpu1 = []
+cpu2 = []
+dam0 = []
+dma = []
+dmu = []
+dom0 = []
+edsadc = []
+eray0 = []
+evadc = []
+fce = []
+fsi = []
+geth = []
+gpt120 = []
+gtm = []
+hsct0 = []
+hsm = []
+hssl0 = []
+i2c0 = []
+int = []
+iom = []
+minimcds = []
+msc0 = []
+msc1 = []
+mtu = []
+p00 = []
+p01 = []
+p02 = []
+p10 = []
+p11 = []
+p12 = []
+p13 = []
+p14 = []
+p15 = []
+p20 = []
+p21 = []
+p22 = []
+p23 = []
+p32 = []
+p33 = []
+p34 = []
+p40 = []
+pfi0 = []
+pfi1 = []
+pms = []
+pmu = []
+psi5 = []
+psi5s = []
+qspi0 = []
+qspi1 = []
+qspi2 = []
+qspi3 = []
+qspi4 = []
+sbcu = []
+scu = []
+sent = []
+smu = []
+src = []
+stm0 = []
+stm1 = []
+stm2 = []
+
+all = ["adma0","amu00","amu01","asclin0","asclin1","asclin10","asclin11","asclin2","asclin3","asclin4","asclin5","asclin6","asclin7","asclin8","asclin9","can0","can1","cbs","ccu60","ccu61","convctrl","cpu0","cpu1","cpu2","dam0","dma","dmu","dom0","edsadc","eray0","evadc","fce","fsi","geth","gpt120","gtm","hsct0","hsm","hssl0","i2c0","int","iom","minimcds","msc0","msc1","mtu","p00","p01","p02","p10","p11","p12","p13","p14","p15","p20","p21","p22","p23","p32","p33","p34","p40","pfi0","pfi1","pms","pmu","psi5","psi5s","qspi0","qspi1","qspi2","qspi3","qspi4","sbcu","scu","sent","smu","src","stm0","stm1","stm2",]
+
+[package.metadata.docs.rs]
+features = ["all"]
