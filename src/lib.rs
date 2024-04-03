@@ -15,12 +15,17 @@
 	*
 	******************************************************************************
 */
-#![no_std]
+#![cfg_attr(not(feature = "tracing"), no_std)]
 #![cfg_attr(target_arch = "tricore", feature(stdsimd))]
 #![allow(non_camel_case_types)]
 #![doc = "Default"]
 pub mod common;
 pub use common::*;
+
+#[cfg(feature = "tracing")]
+pub mod reg_name;
+#[cfg(feature = "tracing")]
+pub mod tracing;
 
 #[cfg(feature = "adma0")]
 pub mod adma0;
