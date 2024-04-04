@@ -359,8 +359,9 @@ where
     }
 }
 
+#[cfg(not(feature = "tracing"))]
 use core::arch::tricore::intrinsics::{__mfcr, __mtcr};
-#[cfg(any(target_feature = "tc18", doc))]
+#[cfg(all(any(target_feature = "tc18", doc), not(feature = "tracing")))]
 use core::arch::tricore::intrinsics::{__mfdcr, __mtdcr};
 
 /// Type of core special register of Aurix (CSFR)
@@ -396,7 +397,7 @@ impl<T: RegSpec<DataType = u32>, A: Access, const ADDR: u16> RegCore<T, A, ADDR>
         let val = {
             let mut buf: u64 = 0x0;
             tracing::READ_FN.with(|rf| {
-                buf = rf.get().unwrap()(self.addr(), std::mem::size_of::<T::DataType>());
+                buf = rf.get().unwrap()(ADDR as usize, std::mem::size_of::<T::DataType>());
             });
             T::DataType::cast_from(buf)
         };
@@ -424,9 +425,9 @@ impl<T: RegSpec<DataType = u32>, A: Access, const ADDR: u16> RegCore<T, A, ADDR>
         #[cfg(feature = "tracing")]
         tracing::WRITE_FN.with(|wf| {
             wf.get().unwrap()(
-                self.addr(),
+                ADDR as usize,
                 std::mem::size_of::<T::DataType>(),
-                reg_value.data().into(),
+                reg_value.data.into(),
             )
         });
         #[cfg(not(feature = "tracing"))]
